@@ -5,6 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
+    <meta name="theme-color" content="#0d6efd">
+    <link rel="manifest" href="{{ asset('manifest.webmanifest') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('icons/apple-touch-icon-180x180.png') }}">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Pengaduan">
     <link rel="stylesheet" href="{{ asset('assets/app/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/app/css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -28,6 +34,15 @@
     <script src="{{ asset('assets/app/js/report.js') }}"></script>
 
     @yield('scripts')
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/sw.js').catch(function (err) {
+                    console.log('SW registration failed', err);
+                });
+            });
+        }
+    </script>
 </body>
 
 </html>
