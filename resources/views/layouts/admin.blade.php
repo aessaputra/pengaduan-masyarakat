@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta name="theme-color" content="#0d6efd">
+    <meta name="theme-color" content="#198754">
 
     <title>@yield('title')</title>
 
